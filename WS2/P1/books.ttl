@@ -1,0 +1,25 @@
+# a.
+
+@prefix book: <http://www.books.org/> .
+
+book:Hamlet
+    book:isbn "1613820917";
+    book:titulo "Hamlet";
+    book:paginas "330";
+    book:autor "W. Shakespeare";
+    book:edicion "N.D";
+    book:editorial "Simon & Brown";
+    book:idioma "Inglés";
+    book:fecha "2011".
+
+# b.
+
+book:TheLordOfTheRings
+    book:isbn "9788445071793";
+    book:titulo "El Señor de los Anillos";
+    book:paginas "1272";
+    book:autor "J. R. R. Tolkien";
+    book:edicion "1";
+    book:editorial "Minotauro";
+    book:idioma "Español";
+    book:fecha "1995".

@@ -1,0 +1,66 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix st: <http://actores.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+st:Persona 
+    a rdfs:Class;
+    rdfs:comment "Persona base".
+
+st:Actor
+    a rdfs:Class;
+    rdfs:subClassOf st:Persona;
+    rdfs:comment "Actor que interpreta un personaje".
+
+st:Personaje
+    a rdfs:Class;
+    rdfs:subClassOf st:Actor;
+    rdfs:comment "Un personaje interpretado por un actor".
+
+st:Pelicula 
+    a rdfs:Class;
+    rdfs:comment "Pelicula en la que hay personajes".
+
+# Una pelicula tiene personajes
+st:personajes a rdf:Property;
+    rdfs:domain st:Pelicula;
+    rdfs:range st:Personaje.
+
+# Un personaje interpretaado por un actor
+st:interpretado_por a rdf:Property;
+    rdfs:domain st:Personaje;
+    rdfs:range st:Actor.
+
+st:ano a rdf:Property;
+    rdfs:range xsd:integer.
+
+# Una pelicula y una persona tienen nombre<string>.
+st:nombre a rdf:Property;
+    rdfs:domain st:Persona;
+    rdfs:domain st:Pelicula;
+    rdfs:range xsd:string.
+
+# Una persona tiene año de nacimiento
+st:ano_nacimiento a rdfs:Property;
+    rdfs:domain st:Persona;
+    rdfs:subPropertyOf st:ano.
+
+# Una persona tiene amigos y son personas.
+st:amigo a rdf:Property;
+    rdfs:domain st:Persona;
+    rdfs:range st:Persona.
+
+####### Instancias
+
+st:Santiago rdf:type st:Persona;
+    st:nombre "Santiago";
+    st:ano_nacimiento "2000".
+
+st:Carlos rdf:type st:Actor;
+    st:nombre "Carlos";
+    st:ano_nacimiento "1999";
+    st:amigo st:Santiago.
+
+st:White_Chicks rdf:type st:Pelicula;
+    st:nombre "White Chicks";
+    st:personajes st:Carlos.

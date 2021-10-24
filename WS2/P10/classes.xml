@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:st="http://actores.org/">
+
+    <rdfs:Class rdf:about="http://actores.org/Persona">
+        <rdfs:comment>Persona base</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://actores.org/Actor">
+        <rdfs:subClassOf rdf:resource="http://actores.org/Persona" />
+        <rdfs:comment>Actor que interpreta un personaje</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://actores.org/Personaje">
+        <rdfs:subClassOf rdf:resource="http://actores.org/Actor" />
+        <rdfs:comment>Un personaje interpretado por un actor</rdfs:comment>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="http://actores.org/Pelicula">
+        <rdfs:comment>Pelicula en la que hay personajes</rdfs:comment>
+    </rdfs:Class>
+
+    <rdf:Property rdf:about="http://actores.org/personajes">
+        <rdfs:domain rdf:resource="http://actores.org/Pelicula" />
+        <rdfs:range rdf:resource="http://actores.org/Personaje" />
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://actores.org/interpretado_por">
+        <rdfs:domain rdf:resource="http://actores.org/Personaje" />
+        <rdfs:range rdf:resource="http://actores.org/Actor" />
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://actores.org/ano">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+    </rdf:Property>
+
+    <rdf:Property rdf:about="http://actores.org/nombre">
+        <rdfs:domain rdf:resource="http://actores.org/Persona" />
+        <rdfs:domain rdf:resource="http://actores.org/Pelicula" />
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    </rdf:Property>
+
+    <rdfs:Property rdf:about="http://actores.org/ano_nacimiento">
+        <rdfs:domain rdf:resource="http://actores.org/Persona" />
+        <rdfs:subPropertyOf rdf:resource="http://actores.org/ano" />
+    </rdfs:Property>
+
+    <rdf:Property rdf:about="http://actores.org/amigo">
+        <rdfs:domain rdf:resource="http://actores.org/Persona" />
+        <rdfs:range rdf:resource="http://actores.org/Persona" />
+    </rdf:Property>
+
+    <rdf:Description rdf:about="http://actores.org/Santiago">
+        <rdf:type rdf:resource="http://actores.org/Persona" />
+        <st:nombre>Santiago</st:nombre>
+        <st:ano_nacimiento>2000</st:ano_nacimiento>
+    </rdf:Description>
+
+    <st:Actor rdf:about="http://actores.org/Carlos">
+        <st:nombre>Carlos</st:nombre>
+        <st:ano_nacimiento>1999</st:ano_nacimiento>
+        <st:amigo rdf:resource="http://actores.org/Santiago" />
+    </st:Actor>
+
+    <st:Pelicula rdf:about="http://actores.org/White_Chicks">
+        <st:nombre>White Chicks</st:nombre>
+        <st:personajes rdf:resource="http://actores.org/Carlos" />
+    </st:Pelicula>
+
+</rdf:RDF>

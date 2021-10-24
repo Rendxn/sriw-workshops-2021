@@ -1,0 +1,24 @@
+[
+  {
+    "@id": "http://www.books.org/Hamlet",
+    "http://www.books.org/isbn": [{ "@value": "1613820917" }],
+    "http://www.books.org/titulo": [{ "@value": "Hamlet" }],
+    "http://www.books.org/paginas": [{ "@value": 330 }],
+    "http://www.books.org/autor": [{ "@value": "W. Shakespeare" }],
+    "http://www.books.org/edicion": [{ "@value": "N.D" }],
+    "http://www.books.org/editorial": [{ "@value": "Simon & Brown" }],
+    "http://www.books.org/idioma": [{ "@value": "Inglés" }],
+    "http://www.books.org/fecha": [{ "@value": 2011 }]
+  },
+  {
+    "@id": "http://www.books.org/TheLordOfTheRings",
+    "http://www.books.org/isbn": [{ "@value": 9788445071793 }],
+    "http://www.books.org/titulo": [{ "@value": "El Señor de los Anillos" }],
+    "http://www.books.org/paginas": [{ "@value": 1272 }],
+    "http://www.books.org/autor": [{ "@value": "J. R. R. Tolkien" }],
+    "http://www.books.org/edicion": [{ "@value": 1 }],
+    "http://www.books.org/editorial": [{ "@value": "Minotauro" }],
+    "http://www.books.org/idioma": [{ "@value": "Español" }],
+    "http://www.books.org/fecha": [{ "@value": 1995 }]
+  }
+]

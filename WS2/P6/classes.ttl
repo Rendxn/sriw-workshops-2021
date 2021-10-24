@@ -1,0 +1,14 @@
+@prefix rdfs: <http://www.w3.orq/2000/01/rdf-schema#> .
+@prefix st: <http://actores.org/> .
+
+st:Persona a rdfs:Class .
+
+st:Actor
+    a rdfs:Class;
+    rdfs:subClassOf st:Persona .
+
+st:Personaje
+    a rdfs:Class;
+    rdfs:subClassOf st:Actor .
+
+st:Pelicula a rdfs:Class .

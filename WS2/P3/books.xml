@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:book="http://www.books.org/" xmlns:author="http://www.authors.org/">
+
+    <rdf:Description rdf:about="http://www.books.org/Hamlet">
+        <book:isbn>1613820917</book:isbn>
+        <book:titulo>Hamlet</book:titulo>
+        <book:paginas rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">330</book:paginas>
+        <book:autor>
+            <rdf:Description>
+                <author:nombre>W. Shakespeare</author:nombre>
+                <author:fecha>1564</author:fecha>
+                <author:pais>Reino Unido</author:pais>
+            </rdf:Description>
+        </book:autor>
+        <book:edicion>N.D</book:edicion>
+        <book:editorial>Simon &amp; Brown</book:editorial>
+        <book:idioma>Inglés</book:idioma>
+        <book:fecha rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2011</book:fecha>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.books.org/TheLordOfTheRings">
+        <book:isbn rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9788445071793</book:isbn>
+        <book:titulo>El Señor de los Anillos</book:titulo>
+        <book:paginas rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1272</book:paginas>
+        <book:autor>
+            <rdf:Description>
+                <author:nombre>J. R. R. Tolkien</author:nombre>
+                <author:fecha>1892</author:fecha>
+                <author:pais>Sudafrica</author:pais>
+            </rdf:Description>
+        </book:autor>
+        <book:edicion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</book:edicion>
+        <book:editorial>Minotauro</book:editorial>
+        <book:idioma>Español</book:idioma>
+        <book:fecha rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1995</book:fecha>
+    </rdf:Description>
+
+</rdf:RDF>
