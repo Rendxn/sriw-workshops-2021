@@ -107,8 +107,6 @@ SELECT DISTINCT ?name (COUNT(DISTINCT ?prize) as ?numPrizes)
 Cree una consulta que obtenga el nombre y el nombre de la categoría de las personas que ganaron el premio nobel de física o química y el año en que ganaron.
 
 ```SPARQL
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX nobel: <http://data.nobelprize.org/terms/>
 
