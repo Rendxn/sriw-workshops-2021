@@ -1,4 +1,10 @@
+# Taller 7
+
+Para correr Virtuoso, se usó la [imagen de Docker oficial](https://hub.docker.com/r/openlink/virtuoso-opensource-7)
+
 ## Ejercicio 1
+
+Crear una consulta que desde nuestro endpoint retorne lo siguiente: retorne el nombre de los robots que tienen identificación, nombre y peso. Este proviene de la ontología de robots.
 
 ```SPARQL
 PREFIX robot: <http://all-robotics.com#>
@@ -13,6 +19,8 @@ SELECT DISTINCT ?nombre
 
 ## Ejercicio 2
 
+Crear una consulta que desde nuestro endpoint retorne lo siguiente: retorne el nombre local “nameLocal” de los países que dependen de otro país “dependentTerritoryOf”. Este proviene de la ontología de países.
+
 ```SPARQL
 PREFIX c: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries/>
 
@@ -24,6 +32,8 @@ SELECT DISTINCT ?nombre
 ```
 
 ## Ejercicio 3
+
+Crear una consulta que desde nuestro endpoint retorne lo siguiente: Usando las consultas del ejercicio 1 y 2, las integre en una sola consulta. Es decir desde el grafo Robots retorne el nombre de los robots que tienen identificación, nombre y peso; Desde el grafo de la ontología de países el nombre local “nameLocal” de los países que dependen de otro país “dependentTerritoryOf”. Se recomienda usar GRAPH <> en la consulta.
 
 ```SPARQL
 PREFIX robots: <http://all-robotics.com#>
@@ -45,6 +55,8 @@ FROM NAMED <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries/>
 
 ## Ejercicio 4
 
+Cree una operación de actualización para añadir una nueva clase llamada Capital y una nueva propiedad hasCapital con dominio Country y rango Capital, a la ontología de países “Countries.owl” que agregamos anteriormente
+
 ```SPARQL
 PREFIX countries: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries/>
 
@@ -58,6 +70,24 @@ INSERT INTO GRAPH <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries/>
 ```
 
 ## Ejercicio 5
+
+Cree una operación de actualización para añadir las capitales y su respectiva relación “hasCapital” de los siguientes países:
+
+- Colombia -> Bogota
+- Venezuela -> Caracas
+- Ecuador -> Quito
+- Argentina -> Buenos Aires
+- Chile -> Santiago de Chile
+- Brasil -> Brasilia
+- Bolivia -> Sucre
+- Uruguay -> Montevideo
+- Paraguay -> Asuncion
+- México -> Ciudad de Mexico
+- Panamá -> Ciudad de Panama
+- Nicaragua -> Managua
+- Cuba -> LA Habana
+- Estados Unidos -> Washington
+- Canadá -> Ottawa
 
 ```SPARQL
 PREFIX countries: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries/>
@@ -114,8 +144,29 @@ INSERT INTO GRAPH <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries/>
 
 ## Ejercicio 6
 
+Cree una consulta de inserción en donde añada 2 propiedades a las capitales. Eres libre de decidir que propiedades, alguna podrían ser la población, clima, moneda, ubicación geográfica, idioma, etc.
+
+```SPARQL
+PREFIX countries: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries/>
+
+INSERT DATA {
+  GRAPH <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries/>
+  {
+    countries:Bogota countries:temperature "Cold".
+    countries:Bogota countries:population 51000000.
+    # Same for other capitals
+  }
+}
+```
+
 ## Ejercicio 7
+
+Cree una operación de actualización para borrar el grafo de la ontología de Robots.
 
 ```SPARQL
 DROP GRAPH <Robots>
 ```
+
+## Ejercicio 8
+
+Suba la ontología “pizzaGL.owl”, archivo de la ontología de las pizzas de los talleres pasados. Y configure lodview para visualizar dicha ontología en este aplicativo. Tome una captura de este ejercicio.
